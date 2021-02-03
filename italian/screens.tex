@@ -1,0 +1,583 @@
+\chapter{The Screens}
+Little Sound Dj has nine screens, laid out in a \begin{math} 5 \times 3 \end{math} screen map.
+
+\section{Screen Map}
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+        \cline{0-4}
+	& \multicolumn{4}{|c|}{ } \\
+	Project & \multicolumn{4}{|c|}{Synth / Wave} \\
+	& \multicolumn{4}{|c|}{ } \\
+        \cline{0-4}
+        & & & & \\
+        Song & Chain & Phrase & Instr. & Table \\
+        & & & & \\
+        \cline{0-4}
+        \multicolumn{5}{|c|}{} \\
+        \multicolumn{5}{|c|}{Groove} \\
+        \multicolumn{5}{|c|}{} \\
+        \cline{0-4}
+\end{tabular}
+\end{figure}
+
+The song, chain and phrase screens are used for composing music. The wave, synth,
+instrument and table screens are used for making sounds.
+Project screen contains project settings, and groove screen controls sequencer timing.
+\footnote{There are also three hidden
+screens, not shown on the map: The file, word and help screens. We will get back to these later.}
+
+You will likely spend most time in the middle row, as that is where the composing is done.
+
+Move between the screens using \textsc{select+cursor}. Synth and wave screens are overlaid; switch between them by pressing \textsc{select+right}.
+
+\section{Starting and Stopping}
+
+When pressing \textsc{start} in the song screen, Little Sound Dj will always try to play all four
+channels. When pressing \textsc{start} in the other screens, Little Sound Dj will only try to play the
+channel that's indicated in the three-letter field at the right edge of the screen (\textsc{pu1}, \textsc{pu2}, \textsc{wav} or \textsc{noi}).
+
+To start playing all four channels from some other screen than the song screen,
+press \textsc{select+start}.
+
+\section{Song Screen}
+
+\begin{figure}[hbtp]
+\centering
+\fbox{ \includegraphics{song} }
+\caption{Song Screen}
+%\label{fig:song}
+\end{figure}
+
+The song screen
+%(figure~\ref{fig:song})
+is the highest level of the sequencer. This is where you arrange your songs.
+
+The screen contains four columns, one for each channel. The columns contain lists of chains to be played from top to down. Different chains are used for different channels.
+
+To insert a chain, move the cursor to an empty step and press \textsc{a}. If you want to add a new
+chain, press \textsc{a} twice. To edit a chain, move the cursor to the chain number and press
+\textsc{select+right}. To remove a chain, press \textsc{b+a}.
+
+To start or stop playing all channels in the song screen, press \textsc{start}. To instantly re-start all channels in the song screen, press \textsc{select+start}.
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+\item \textit{Pull up down-below chains by pressing \textsc{b+a} on an empty step.}
+\item \textit{\textsc{B+up/down} does page up/down.}
+\item \textit{Add or remove song screen bookmarks by tapping \textsc{b} three times \textsc{(b, b, b)}.}
+\end{itemize}
+
+\section{Chain Screen}
+Chains are lists of phrases to be played in order. A chain can represent for example a melody or a bass line.
+
+The chain screen contains two columns. The first column contains the list of phrases
+to play, while the second column transposes the phrase to the left.
+
+\begin{figure}[hbtp]
+\centering
+\fbox{ \includegraphics{chainexample} }
+\caption{Chain Screen}
+\label{fig:chainexample}
+\end{figure}
+
+Example:
+The chain in figure~\ref{fig:chainexample} would play phrase 3, adding 5 semitones to each note, and then play each of the phrases 4, 5, 6 without transposing.
+
+To add a phrase to the chain, move the cursor to an empty step and press \textsc{a}. To
+insert a new phrase, press \textsc{a} twice on an empty step. To edit a phrase, move the cursor to the phrase number
+and press \textsc{select+right}.
+
+When editing a chain, you can go to the chain in a neighboring channel by pressing \textsc{b+left/right}. It is also possible to go to the next or previous chain in the song screen by
+pressing \textsc{b+up/down}.
+
+The different channels all share the same set of chains; that is, no chain is ever locked to a
+particular channel.
+
+\section{Phrase Screen}
+
+\begin{figure}[hbtp]
+\centering
+\fbox{ \includegraphics{phrase} }
+\caption{Phrase Screen}
+%\label{fig:phrase}
+\end{figure}
+
+The phrase screen is where you enter notes. It has four columns: note, instrument, command and command value.
+
+Phrases are shared between channels; that is, any phrase may be played back on any channel. A phrase might however sound very different depending on which channel it is played back on. As an example, if a phrase plays a melody using a pulse instrument, it will probably sound good in the pulse channels but strange in the other channels.
+
+The note column looks different depending on instrument. Usually it shows note and octave, but instruments that play back samples (\textsc{kit}, \textsc{speech}) show sample names instead.
+
+The instrument column selects instrument. There are 65 instruments in total, all of which can be changed in the instrument screen.
+
+The command column is used to add effects. For example, the K command kills the sound of the channel.
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+    \item \textit{To shorten the length of a phrase, use the H (hop) command.}
+    \item \textit{Notes without instrument change pitch or sample without a retrig.}
+    \item \textit{Mute kit note columns by pressing \textsc{a+right} until \textsc{off} appears. (Only works for kits with fewer than 15 samples.)}
+\end{itemize}
+
+\section{Instrument Screen}
+
+\begin{figure}[hbtp]
+\centering
+\fbox{ \includegraphics{instr-pulse} }
+\caption{Instrument Screen}
+\label{fig:instr2}
+\end{figure}
+
+There are five types of instruments available:
+
+\begin{description}
+\item[\textsc{pulse}] Makes pulse waves. Used in pulse channels 1 and 2.
+\item[\textsc{wave}] Plays back waves synthesized using the synth screen. Used in the wave channel.
+\item[\textsc{kit}] Plays back samples from ROM. Used in the wave channel.
+\item[\textsc{noise}] Makes filtered noise. Used in the noise channel.
+\item[\textsc{speech}] This instrument is locked to instrument number \$40, and is used for speech programming. Learn all about it in chapter \ref{speech-chapter}!
+\end{description}
+
+You can change the instrument type by going to the type row and pressing \textsc{a+cursor}.
+
+Remember that instruments don't automatically play in the right channel. For example, if you want to use a kit instrument to play drum samples, do the following:
+
+\begin{enumerate}
+\item Go to the song screen, move cursor to the wave column, and insert a new chain by tapping \textsc{a} twice on an empty step.
+\item	Edit the chain by pressing \textsc{select+right}.
+\item	Insert a new phrase by tapping \textsc{a} twice.
+\item	Edit the phrase by pressing \textsc{select+right}. Now, you have a new phrase placed in the wave channel.
+\item	Create a new instrument by moving the cursor to the instrument column and tapping \textsc{a} twice.
+\item	Press \textsc{select+right} to edit the instrument.
+\item	Change the instrument type to \textsc{kit}.
+\item	Go back to the phrase screen to start using your new instrument.
+\end{enumerate}
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+	\item \textit{In the instrument screen, press \textsc{select+b} to copy instruments and \textsc{select+a} to paste.}
+%\marginpar{\includegraphics[width=0.8cm]{tip}TIP!}
+\end{itemize}
+
+\subsection{General Instrument Parameters}
+\label{general-instrument-parameters}
+
+These parameters are used in most instrument types.
+
+\begin{description}
+	\item[\textsc{name}] Name the instrument by pressing \textsc{a}. This is useful for keeping track of your instruments. The instrument name will also be shown in the border when selecting instruments in the phrase screen.
+	\item[\textsc{type}] Instrument type.
+	\item[\textsc{length}] Sound length.
+	\item[\textsc{output}] Send the sound to left/right/both/none speakers. (Use the headphone output to hear the difference!)
+    \item[\textsc{pitch}] Controls the behavior of \textsc{p}, \textsc{l} and \textsc{v} commands. \textsc{A+u/d} switches pitch update speed: \textsc{fast} updates pitch at 360 Hz; \textsc{tick} updates pitch every tick; \textsc{step} is like \textsc{fast} except that \textsc{p} does pitch change instead of pitch bend; \textsc{drum} is like \textsc{fast} with logarithmic fall-off, useful for \textsc{p} kicks. \textsc{a+l/r} changes vibrato shape between downwards triangle, saw and square, and upwards triangle, saw and square.
+    \item[\textsc{transp.}] When \textsc{on}, the pitch may be affected by project and table transposes.
+    \item[\textsc{cmd/rate}] Slows down \textsc{c} and \textsc{r} commands.
+        Also affects \textsc{p} and \textsc{v} commands when \textsc{pitch} is set to \textsc{tick}.
+        0=fastest, F=slowest.
+    \item[\textsc{table}] Selects a table to run when playing notes. To edit the table, press \textsc{select+right}. To create a new table, press \textsc{a,a}. To clone the table, press \textsc{select+(b,a)}.
+        Changing \textsc{play} to \textsc{step} makes Little Sound Dj step through the table, advancing one step every time the instrument is triggered.
+\end{description}
+
+\subsection{Pulse Instrument Parameters}
+\label{detune}
+
+\begin{figure}[htpb]
+	\begin{center}
+\fbox{ \includegraphics{instr-pulse} }
+	\end{center}
+	\caption{Pulse Instrument Screen}
+	\label{fig:instr-pulse}
+\end{figure}
+
+\label{pulse-adsr}
+\begin{description}
+	\item[\textsc{adsr}] Three amplitude control values. For each value, first digit sets amplitude, and the second digit sets the speed to rise or fall to the next amplitude. Speed 1 is fast, 7 is slow, 0 means hold. As an example, \textsc{adsr} 31F7A0 creates an envelope 
+ with fast attack from amplitude 3 to F, slow decay to A, then infinite sustain, as shown in figure~\ref{fig:adsrexample}.
+	\item[\textsc{wave}] Wave type.
+	\item[\textsc{sweep}] Frequency sweep, useful for bass drum and percussion. The first digit sets time, the second sets pitch increase/decrease. Only works on the first pulse channel. 
+\end{description}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=10cm]{adsrexample} 
+\caption{Amplitude envelope example. ADSR=31F7A0.}
+\label{fig:adsrexample}
+\end{figure}
+
+The detune settings create interesting phase effects when the same phrase is played on both pulse channels:
+
+\begin{description}
+	\item[\textsc{pu2 tsp.}] Transpose pulse channel 2.
+	\item[\textsc{finetune}] Detune pulse channel 1 downwards, channel 2 upwards.
+\end{description}
+
+\subsection{Wave Instrument Parameters}
+
+The wave instrument plays back synth sounds generated in the \textsc{synth} screen.
+
+\begin{figure}[hbtp]
+	\begin{center}
+		\fbox { \includegraphics{instr-wave} }
+	\end{center}
+	\caption{Wave Instrument Screen}
+	%\label{fig:instr-wave}
+\end{figure}
+
+\begin{description}
+    \item[\textsc{volume}] Set amplitude (0=0\%, 1=25\%, 2=50\%, 3=100\%) and left/right output.
+    \item[\textsc{finetune}] Detunes the sound.
+    \item[\textsc{synth}] Select the synth sound to play back. To edit the synth sound being used, press \textsc{select+up} to go to the \textsc{synth} screen. To use a new synth, tap \textsc{a} twice. To clone the synth, press \textsc{select+(b,a)}.
+    \item[\textsc{play}] How to play back the synth sound: \textsc{manual}, \textsc{once}, \textsc{loop}, or \textsc{pingpong}. With \textsc{manual}, only the first wave of the synth sound is played, allowing you to step through the sound manually using the \textsc{f} command.
+	\item[\textsc{speed}] Set how fast the synth sound should be played back.
+	\item[\textsc{length}] Set the length of the synth sound.
+	\item[\textsc{loop pos}] Set the loop point of the synth sound.
+\end{description}
+
+\subsection{Kit Instrument Parameters}
+
+\begin{figure}[hbtp]
+	\begin{center}
+	\fbox {	\includegraphics{instr-kit} }
+	\end{center}
+	\caption{Kit Instrument Screen}
+	%\label{fig:instr-kit}
+\end{figure}
+
+\begin{description}
+	\item[\textsc{kit}] Choose the sample kits to use. The first kit will be used in the left note column in the phrase screen; the second kit will be used in the right note column in the phrase screen.
+    \item[\textsc{volume}] Set amplitude (0=0\%, 1=25\%, 2=50\%, 3=100\%) and output (left/right/both/off).
+	\item[\textsc{finetune}] Pitch shift.
+	\item[\textsc{offset}] Set the start loop point. If \textsc{loop} is \textsc{off}, this value can be used for skipping the initial part of a sound.
+	\item[\textsc{len}] Sound length. \textsc{Aut} plays the sample to its end.
+	\item[\textsc{loop}] Loop control. \textsc{Off}=don't loop, \textsc{on}=loop sound and start playing from \textsc{offset}, \textsc{atk}=loop sample and start playing from the beginning.
+	\item[\textsc{speed}] Full speed or half speed.
+	\item[\textsc{dist}] Selects what to do when the signal overshoots while mixing two kits. \textsc{clip} is the default: Hard clamp the signal to the allowed 0-\$F range. \textsc{shape} and \textsc{shape2} are similar to \textsc{clip}, but a bit softer, preserving the sounds better at the cost of not being as loud. \textsc{wrap} can be used to add some interesting digital distortion. Pressing \textsc{a+(left, left)} while \textsc{clip} is selected will make the value jump out of range and play back sound from raw memory when the signal overshoots.
+\end{description}
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+\item \textit{To replace the default sample kits, use the lsdpatcher program.} \url{http://littlesounddj.com/lsd/latest/lsd-patcher/}
+\end{itemize}
+
+\subsection{Noise Instrument Parameters}
+\label{noise-instrument-parameters}
+
+\begin{figure}[htpb]
+	\begin{center}
+		\fbox { \includegraphics{instr-noise} }
+	\end{center}
+	\caption{Noise Instrument Screen}
+	\label{fig:instr-noise}
+\end{figure}
+
+\begin{description}
+	\item[\textsc{adsr}] See description of pulse ADSR (\ref{pulse-adsr}).
+	\item[\textsc{shape}] Noise generator control. The first digit changes pitch by octave, the second digit divides the frequency. Set the second digit to 0-7 for periodic noise, 8-\$F for random noise.
+        An in-depth technical explanation of the noise generator can be found in \href{http://www.devrs.com/gb/files/hosted/GBSOUND.txt}{gbsound.txt}.
+	\item[\textsc{s mode}] When set to \textsc{free}, noise changing commands can randomly\footnotemark mute the sound. When set to \textsc{stable}, commands are limited so that sound will never be muted by accident.
+\footnotetext{There is a 0.4\% risk that the sound gets muted when a shape that ends with digit 8-F
+        is changed so that it ends with digit 0-7.}
+\end{description}
+
+\subsection{Speech Instrument Parameters}
+
+Read about the speech instrument in chapter \ref{speech-chapter}.
+
+\section{Table Screen}
+
+Tables are sequences of transposes, commands and amplitude changes which can be run at any speed and applied to any channel. By setting a table in the instrument screen, the table will start every time you play the instrument. This allows you to create more interesting sounds than would be possible using the instrument screen alone.
+
+Tables contain six columns. The first column is the envelope column, used to create custom amplitude envelopes. Next is the transpose column, used to transpose the played note by a number of semitones. The other columns are command columns like the one in the phrase screen.
+
+For noise instruments, the transpose is added to the current noise shape value. As an example, \$FF would decrease the total noise shape value by one (as opposed to the \textsc{sff} command, which would subtract one from each digit).
+
+The default table speed of one tick per step can be changed using the G command. To view different tables, press \textsc{b+cursor}.
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+	\item \textit{Press \textsc{select+right} on an A command in the phrase screen to edit that table. To jump back, press \textsc{select+left}.}
+\end{itemize}
+
+\subsection{Envelope Example}
+
+The first digit in the envelope column sets the amplitude; the second digit sets for how many ticks the amplitude lasts.
+When the second digit is F, the envelope will hop to the step in the first digit.
+
+\begin{figure}[htpb]
+	\begin{center}
+		\fbox{		\includegraphics{table-amp} }
+	\end{center}
+	\caption{Table Envelope Example}
+	\label{fig:table-amp}
+\end{figure}
+
+The table in figure~\ref{fig:table-amp} creates an amplitude envelope with short attack and medium sustain.
+
+For pulse and noise instruments, \textsc{adsr} might be more useful than table envelopes, as it gives a smoother sound.
+
+\subsection{Arpeggio Example}
+
+\begin{figure}[htpb]
+	\begin{center}
+		\fbox{ \includegraphics{table-arp}}
+	\end{center}
+	\caption{Arpeggio Example}
+	\label{fig:table-arp}
+\end{figure}
+
+A typical use for tables is to make arpeggios, which is a musical term for playing notes fast enough to sound like a chord. The table in figure~\ref{fig:table-arp} would form a major chord. Shorter arpeggios can also be made using the C command (see \ref{command-chord}).
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+	\item \textit{To give an instrument some attack, transpose the first table row a few steps up or down.}
+	\item \textit{The transpose column has special functionality when using \textsc{kit} or \textsc{noise} type instruments. For \textsc{kit}, the transpose column works as a pitch shifter. For \textsc{noise}, the transpose column works like the \textsc{s} (shape) command.}
+\end{itemize}
+
+\section{Groove Screen}
+
+Grooves control by which speed your phrases and tables are played back. When used well, grooves will make your music sound more lively.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\fbox{ \includegraphics{groove} }
+	\end{center}
+	\caption{Groove Screen}
+	\label{fig:groove}
+\end{figure}
+
+The sequencer is based on a time period called \emph{tick}, which is controlled by song tempo.
+Ticks are very short: at 125 BPM, there are 50 ticks per second.
+Higher tempo means faster ticks, and the other way around. 
+In the groove screen, you can control for how many ticks phrase or table steps should last.
+The groove in figure~\ref{fig:groove} would make the sequencer spend 6 ticks on every step.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\fbox{ \includegraphics{groove-swing} }
+	\end{center}
+	\caption{Swing Example}
+	\label{fig:groove-swing}
+\end{figure}
+
+You can also use grooves to create custom rhythms. The groove in figure~\ref{fig:groove-swing} would make even note steps last 8 ticks, and odd note steps last 5 ticks, creating a swing effect. Grooves can also be used to create triplets and other complex rhythms.
+
+Groove 0 is the default groove for all phrases, but it is possible to switch to another groove using the G command.
+This command also works in tables.
+
+In the groove screen, select the groove you wish to edit by pressing \textsc{b+cursor}.
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+	\item \textit{ \textsc{A+up/down} changes the swing percentage, while preserving the total number of ticks -- and thus, the resulting song speed -- constant. (Example: Original value is 6/6 = 50\%. Press \textsc{a+up}. Now the value changes to 7/5 = 58\%!) }
+    \item \textit{ Press \textsc{select+up} on G commands to edit that groove. }
+\end{itemize}
+
+\section{Synth Screen}
+
+The synth screen features a soft synthesizer that generates sounds to be played back by the wave instruments.
+Each synth sound uses \$10 waves. Synth sound 0 uses waves \$00-\$0F, synth sound 1 uses waves \$10-\$1F, and so on. The generated synth sounds can be viewed in the wave screen (Section~\ref{wave-screen-section}).
+
+In total, there are 16 synth sounds. Choose which one to edit by pressing \textsc{b+cursor}.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\fbox{\includegraphics{synth}}
+	\end{center}
+	\caption{Synth Screen}
+	\label{fig:synth}
+\end{figure}
+
+\subsection{Fixed Synth Settings}
+
+\begin{description}
+	\item[\textsc{signal}] Square, saw tooth, triangle or custom wave. \textsc{W.fx} uses a wave in range F0-FF as signal.
+\item[\textsc{filter}] Low-pass, high-pass, band-pass or all-pass.
+\item[\textsc{dist}] Distortion mode. \textsc{Clip} truncates the wave to \textsc{limit}, \textsc{fold} mirrors the wave around \textsc{limit}, \textsc{wrap} wraps around vertically.
+\item[\textsc{phase}] \label{phase}
+Compress the waveform horizontally. It is applied after filtering with \textsc{q} and \textsc{cutoff}. See figure \ref{fig:phasing} for examples.
+\end{description}
+
+\begin{figure}[hbtp]
+	\centering
+	\subfloat[Phase example. Original wave.]{
+		\fbox{\includegraphics{wave}}
+	}
+	\qquad
+	\subfloat[\textsc{normal} phasing. Compress horizontally, generate once.]{
+	\fbox{\includegraphics{phase-normal}}
+	}
+
+	\subfloat[\textsc{resync} phasing. Compress horizontally, loop.]{
+		\fbox{\includegraphics{phase-resync}}
+	}
+	\qquad
+	\subfloat[\textsc{resyn2} phasing. Loop, but don't compress.]{
+		\fbox{\includegraphics{phase-resyn2}}
+	}
+	\caption{Phase Examples}
+	\label{fig:phasing}
+\end{figure}
+
+\subsection{Variable Synth Settings}
+
+These settings control the first and last wave of the sound, with a smooth in-between fade.
+
+\begin{description}
+\item[\textsc{volume}] Signal volume.
+\item[\textsc{q}] Resonance control. Boosts the signal around the cutoff frequency, to change how bright or dull the wave sounds.
+\item[\textsc{cutoff}] Filter cutoff frequency.
+\item[\textsc{vshift}] Shifts the signal vertically. See figure \ref{fig:vshift} for examples.
+\item[\textsc{limit}] Limits the signal vertically using the \textsc{dist} mode.
+\item[\textsc{phase}] 0 = no phase, \$1F = maximum phase. See figure \ref{fig:phasing} for examples.
+\end{description}
+
+\begin{figure}[htpb]
+	\centering
+	\subfloat[Vshift example. Original wave.]{
+		\fbox{\includegraphics{wave}}
+	}
+
+	\subfloat[Vshifted signal. Vshift = 40, clip = wrap.]{
+	\fbox{\includegraphics{vshift-40}}
+	}
+
+	\subfloat[Vshifted signal. Vshift = 80, clip = wrap.]{
+		\fbox{\includegraphics{vshift-80}}
+	}
+	\caption{Vshift Examples}
+	\label{fig:vshift}
+\end{figure}
+
+\section{Wave Screen}
+\label{wave-screen-section}
+
+In the wave screen, you can view and edit the individual waveforms of the synth sounds. There are 16 synth sounds with 16 waves each. This means that synth sound 0 uses waves \$0-\$F, synth sound 1 uses waves \$10-\$1F, and so on.
+
+To change selected values, press \textsc{up/down}. To flip selected values, press \textsc{a+cursor}. \textsc{B+cursor} navigates between different waves.
+
+It is possible to modify multiple values at once, using the regular key presses:
+
+\begin{description}
+	\item[\textsc{select+b}] Start selection.
+	\item[\textsc{select+b,b}] Select the entire wave.
+	\item[\textsc{b}] Copy selection to clipboard.
+	\item[\textsc{up/down}] Move selection up/down.
+	\item[\textsc{a+left/right}] Flip selection horizontally. If no selection is made, draw a horizontal line.
+	\item[\textsc{a+up/down}] Flip selection vertically.
+	\item[\textsc{select+a}] Paste from clipboard.
+\end{description}
+
+\section{Project Screen}
+
+\begin{figure}[htpb]
+	\begin{center}
+		\fbox{		\includegraphics{project}}
+	\end{center}
+	\caption{Project Screen}
+	\label{fig:project}
+\end{figure}
+
+The project screen (figure~\ref{fig:project}) contains settings that affect the entire program.
+
+\begin{description}
+	\item[\textsc{tempo}] Song tempo in BPM. It is possible to change the tempo either by pressing
+\textsc{a+cursor}, or by tapping the \textsc{a} button in pace with the desired tempo. When being a
+follower in sync mode, you can nudge the tempo by pressing \textsc{a+left/right}, something which
+can be useful if devices have drifted out of sync.
+	\item[\textsc{transpose}] Adjust the pitch of the pulse and wave instruments by the given number of semitones.
+	\item[\textsc{sync}] Connects to other devices using the link port. Read all about sync settings in chapter \ref{sync-chapter}!
+
+	\item[\textsc{clone}] Deep or slim chain cloning. Deep chain cloning will clone a chain's phrases, whereas slim cloning will re-use the old phrases. Read all about cloning in section \ref{cloning}!
+	\item[\textsc{look}] Change the font and color set.
+	\item[\textsc{key delay/repeat}] Set repeat delay and repeat rate of the Game Boy buttons.
+	\item[\textsc{prelisten}] Play notes and instruments while entering them.
+
+	\item[\textsc{help}] Enter help screen. The help screen contains a quick reference for button presses and a command list.
+	\item[\textsc{clean song data}] Merge duplicate chains and phrases and clear unused ones. \label{clean-song-data}
+	\item[\textsc{clean instr data}] Merge duplicate tables and clear unused instruments, tables, synths and waves.
+	\item[\textsc{load/save song}] Enter file screen. \footnote{The file screen is only available for cartridges that have 1 Mbit SRAM or more. In case your cartridge doesn't have 1 Mbit SRAM, this button will be replaced with a \textsc{reset memory} button.}
+\end{description}
+
+The project screen also has two clocks.
+The \textsc{worked} clock displays the time spent making the current song, in hours and minutes.
+When playing, it is replaced by the \textsc{play} clock, which shows for how long the song has been playing.
+The \textsc{total} clock shows how long the cartridge has been used in total, in days, hours and minutes.
+
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+\item \textit{To replace the default fonts and palettes, use the lsdpatcher program.} \url{http://littlesounddj.com/lsd/latest/lsd-patcher/}
+\end{itemize}
+
+\subsection{Total Memory Reset}
+\label{total-memory-reset}
+
+Press \textsc{select+a+b} on \textsc{load/save file} to erase all songs and bring back the cartridge to its default state.
+Generally, this is only useful if the cartridge got scrambled.
+
+\section{File Screen}
+
+\begin{figure}[htpb]
+	\begin{center}
+		\fbox{\includegraphics{file}}
+	\end{center}
+	\caption{File Screen}
+	\label{fig:file}
+\end{figure}
+
+The file screen (figure~\ref{fig:file}) is entered by pressing the \textsc{load/save file} button in the project screen. It is used for saving the song you are working on to the storage memory. It can also be used to load songs from the storage memory to the work memory. The file screen allows you to keep up to 32 songs on one cartridge.
+
+Note: The file screen is only available for cartridges that have 512 Mbit SRAM or more.
+
+\begin{description}
+	\item[\textsc{file}] Shows the file name of the song you are working on. The exclamation mark (\textsc{!}) indicates when changes have been made to a song.
+	\item[\textsc{load}] Load a song. Press \textsc{a}, select the file to load and press \textsc{a} again.
+	\item[\textsc{save}] Save song. Press \textsc{a}, select the slot to save to and enter the file name.
+	\item[\textsc{erase}] Erase a song. Press \textsc{a}, select the file to erase and press \textsc{a} again.
+	\item[\textsc{blocks used}] Shows how much of the storage memory that is used. One block equals 512 bytes. The digits on the bottom are hexadecimal, meaning there is a total of \$BF * 512 = 97,792 available bytes.
+\end{description}
+
+To cancel an operation in this screen, simply press \textsc{b}.
+
+\begin{figure}[hbtp]
+\includegraphics[width=0.8cm]{tip}TIP!
+\begin{itemize}
+        \item \textit{There is a useful file manager application available at} \url{http://littlesounddj.com/lsd/latest/lsd-manager/}.
+	\end{itemize}
+\end{figure}
+
+\subsection{Song List}
+
+The song list presents song name, version number and file size. When saving, the song is compressed, so the resulting file size will vary with different songs. To start working on a new song, load from the \textsc{(empty)} slot.
+
+\includegraphics[width=0.84cm]{tip}TIP!
+\begin{itemize}
+    \item{While in the song list, it is possible to press \textsc{select+a} to load a song without switching to the song screen, and \textsc{start} to start/stop songs. In this way, you can load and play songs without jumping back and forth between screens. This can be handy if you are playing a live show with prepared tracks and want fewer things to think about.}
+\end{itemize}
+
+\section{Border Information}
+
+Various useful data is displayed in the screen border.
+
+\begin{figure}[htpb]
+	\begin{center}
+	\includegraphics[width=11cm]{border}
+	\end{center}
+	\caption{Border Information}
+	\label{fig:border}
+\end{figure}
+
+\begin{enumerate}
+\item Screen title. Shows what is being edited.
+\item The channel being edited, that is, the selected song screen column.
+\item Chain position being edited.
+\item Current tempo in beats per minute (BPM).
+\item Shows what is being played on the channels. \textsc{Mute} appears when pressing \textsc{b+select} or \textsc{b+start}.
+\item The waveform being played on the wave channel.
+\item The name of the instrument being selected in the phrase screen.
+\item Sync status.
+\item Screen map.
+\end{enumerate}
+
+

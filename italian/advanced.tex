@@ -1,0 +1,165 @@
+\chapter{Advanced Techniques}
+
+\section{Copy and Paste} \label{copy-paste}
+
+Little Sound Dj has a clipboard for temporary data storage. Pressing \textsc{b+a} will cut the value
+under the cursor and store it on the clipboard. The value can then be pasted by pressing
+\textsc{select+a}.
+
+In most screens, it is possible to mark up blocks by pressing \textsc{select+b} and moving around
+the cursor. When having marked up a block, it can be copied to the clipboard by pressing \textsc{b},
+or cut to the clipboard by pressing \textsc{select+a}. The clipboard contents can then be pasted by
+pressing \textsc{select+a}.
+
+Some quick-mark button presses are implemented:
+\begin{itemize}
+\item \textsc{select+(b, b)} = quick-mark a column or row.
+\item \textsc{select+(b, b, b)} = quick-mark an entire screen.
+\end{itemize}
+
+When having marked a block, you can change all data inside that block by pressing \textsc{a+cursor}. This can be used, for example, to transpose several notes quickly.
+
+\section{Cloning} \label{cloning}
+
+Cloning is a shortcut that can save you much unnecessary copy and paste work.
+It allows you to create copies of chains, phrases, instruments and tables directly from the song, chain, phrase and instrument screens.
+
+Let's imagine you want to make a slightly altered version of the melody in chain 0. Go to the song screen, tap \textsc{a} on 00 to pick the number, then tap \textsc{a} again on a down-below empty step so that you get:
+
+\begin{verbatim}
+ 00
+ 00
+\end{verbatim}
+
+Now, move the cursor to the second 00 and press \textsc{select+(b, a)} to make a copy of chain 0.
+
+\subsection{Deep vs. Slim-Cloning}
+
+There are two different cloning modes: deep and slim cloning, selectable from the project screen.
+
+When slim-cloning a chain, a new chain appears that contains the same phrases as the original.
+
+When deep-cloning a chain, a new chain appears with copies of the original phrases.
+
+The advantage of deep-cloning is that you lessen the risk of modifying old phrases by accident.
+The drawback is that will run out of phrases faster.
+Also, your songs might take up more space when saved in the file screen.
+
+If you run out of phrases, use \textsc{clean song data} in project screen. (Section \ref{clean-song-data}.)
+
+\section{The Importance of Backups}
+
+Some words of caution from many peoples hard-earned experience: When using a Game Boy cartridge, backup your songs! Most Game Boy cartridges depend on an internal battery that will run out, losing your songs in the process. If you care about your music, do regular backups, or at least record your songs to prevent them from being lost forever.
+
+\section{Muting, Soloing and Panning}
+
+\begin{itemize}
+\item Press \textsc{b+select} in any screen to mute the channel. If the \textsc{b} button is released before \textsc{select}, the channel stays muted until \textsc{b} is pressed again.
+\item Press \textsc{b+start} in any screen to solo the channel. If the \textsc{b} button is released before \textsc{start}, the other channels stay muted. If the \textsc{start} button is released first, all channels will be turned on again.
+\item Press \textsc{b+left/right} in the song screen to pan a channel left or right.
+\end{itemize}
+
+\section{Live Mode}
+
+The live mode is a special flavor of the song screen which allows starting and stopping chains one by one.
+It allows different channels to play at different song positions.
+To toggle between song and live mode, press \textsc{select+left} in the song screen.
+
+To play a chain, move the cursor to the chain and press \textsc{start}. To stop playing the chain, move the cursor to its channel and press \textsc{select+start}. If another chain is already playing, the starts and stops are queued until the chain has been played through. Tapping \textsc{start} twice speeds up the switch so that it happens when the currently playing phrase ends. Pressing \textsc{start} twice in chain screen queues the phrase under the cursor; in the phrase screen, it queues the phrase being edited.
+
+\includegraphics[width=1cm]{tip}TIP!
+\begin{itemize}
+        \item \textit{To start or stop several chains at once, mark them before pressing \textsc{start} or \textsc{select+start}. (Marking is described in section \ref{copy-paste}.)}
+	\end{itemize}
+
+\subsection{Chain Loops}
+
+Chain loops can be a useful live mode technique. After playing the last chain, the song sequencer rewinds until it reaches an empty step, rather than going all the way to the top.
+
+Imagine the setup in figure~\ref{fig:chainloop}, and that we start playing chain 2.
+The player will now loop chains 2 and 3.
+Having a bunch of chain loops to alternate between might be useful during a live performance.
+
+\begin{figure}[htpb]
+	\begin{center}
+	\fbox{\includegraphics{chainloop}}
+	\end{center}
+	\caption{Chain Loop Example}
+	\label{fig:chainloop}
+\end{figure}
+
+\section{Synthetic Drum Instruments}
+
+Creating drum instruments without using the sampled drum kits can be very useful, as it gives greater flexibility in how to make use of the channels. Here are some starting-out ideas.
+
+\begin{figure}[hbtp]
+	\centering
+	\subfloat[Bass Drum]{
+		\fbox{\includegraphics{instr-kick}}
+	}
+	\qquad
+	\subfloat[Snare Drum]{
+	\fbox{\includegraphics{instr-snare}}
+	}
+
+	\subfloat[Closed Hi-Hat]{
+		\fbox{\includegraphics{instr-chh}}
+	}
+	\qquad
+	\subfloat[Open Hi-Hat]{
+	\fbox{\includegraphics{instr-ohh}}
+	}
+
+	\subfloat[Cymbal]{
+		\fbox{\includegraphics{instr-cym}}
+	}
+	\qquad
+	\subfloat[Snare Drum Table]{
+	\fbox{\includegraphics{table-snare}} \label{fig:table-snare}
+	}
+
+	\caption{Synthetic Drum Instruments}
+	\label{fig:instr-examples}
+\end{figure}
+
+\subsection{Pulse Bass Drum}
+
+The easiest way to create a bass drum is by using pulse channel 1. \textsc{Adsr} should have a strong attack and fast decay -- try setting it to \$C1. \textsc{Wave} is typically 50-50 high/low, even though other waves can be used for a more distorted sound. \textsc{Sweep} should have high initial frequency and fast decay; try setting it to \$E3, and play the instrument at note C-6. For a snappier kick, experiment with \textsc{adsr} and \textsc{length} parameters. Set \textsc{transpose} to \textsc{off} to prevent chain transposes from changing the pitch.
+
+\subsection{Snare Drum}
+
+Use the noise channel for snare drum sounds. The \textsc{adsr} setting should have a strong attack and fast decay -- try setting it to \$D1. Use of the \textsc{length} parameter will make it snappier. Adjust the timbre using \textsc{shape} -- values close to \$EC might prove useful.
+
+\subsection{Hi-Hats and Cymbals}
+
+Use the noise channel for hi-hats and cymbals. Use a \textsc{shape} value of \$FF for a timbre with high frequency content. Change \textsc{adsr} to get the desired amplitude envelope. For cymbals, a \textsc{shape} value near \$EE will make for a somewhat rougher timbre.
+
+\subsection{Taking Advantage of Tables}
+
+For adding that extra punch to snares, use the table transpose column to change the noise shape rapidly. (See figure~\ref{fig:table-snare}.)
+
+\begin{figure}[hbtp]
+	\centering
+	\subfloat[Bass Drum Instrument]{
+		\fbox{\includegraphics{instr-wavekick}}
+	}
+	\qquad
+	\subfloat[Bass Drum Synth]{
+	\fbox{\includegraphics{synth-wavekick}}
+	}
+
+	\subfloat[Bass Drum Wave]{
+		\fbox{\includegraphics{wave-wavekick}}
+	}
+	\qquad
+	\subfloat[Bass Drum Table]{
+	\fbox{\includegraphics{table-wavekick}}
+	}
+
+	\caption{Wave Channel Bass Drum}
+	\label{fig:wavekick}
+\end{figure}
+
+\subsection{Wave Bass Drum}
+
+For the best sounding bass drum, use the synthesizer in the wave channel. Set the \textsc{pitch} to \textsc{drum} by pressing \textsc{a+up}, and set \textsc{transp.} to \textsc{off}. On the synth screen, choose the triangle signal, and set \textsc{volume} to \$30. Set a table for the instrument. On step 0 of the table, use a fast P command such as \$C0. On line 1, put \$80 in the \textsc{tsp} column and use an L command with a value such as \$30. This will transpose the bass drum to the lowest possible note without wrapping to a higher pitch.  Feel free to experiment with different synth parameters or different values for the P and L commands to shape the sound of the kick, as well as playing the instrument at note C-5, C-6, or above. (See figure~\ref{fig:wavekick}.)
