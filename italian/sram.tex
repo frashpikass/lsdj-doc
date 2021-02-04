@@ -1,101 +1,101 @@
-\chapter{SRAM Memory Map}
+\chapter{Mappa di memoria SRAM}
 
-This chapter is intended for programmers. It contains information about how song data is stored in SRAM. If you use an emulator, SRAM contents are usually stored in a .sav file.
+Questo capitolo è pensato per i programmatori. Contiene informazioni su come sono conservati nella SRAM i dati di una canzone. Se si usa un emulatore, i contenuti della SRAM sono solitamente all'interno di un file .sav.
 
-\section{Bank Layouts}
+\section{Contenuto dei banchi di memoria}
 
-\subsection{Bank 0}
+\subsection{Banco 0}
 
 \begin{description}
-    \item[A000-AFEF] phrase notes
-    \item[AFF0-B02F] bookmarks
-    \item[B030-B08F] empty
-    \item[B090-B28F] grooves
-    \item[B290-B68F] song chains
-    \item[B690-B88F] table envelopes
-    \item[B890-BDCF] speech instrument words (\$20*42)
-    \item[BDD0-BE77] speech instrument wordnames
-    \item[BE78-BE79] mem initialized flag (set to "rb" on init)
-    \item[BE7A-BFB9] instrument names
+    \item[A000-AFEF] note della phrase
+    \item[AFF0-B02F] bookmarks (segnalibri)
+    \item[B030-B08F] vuoto
+    \item[B090-B28F] groove
+    \item[B290-B68F] chain della song
+    \item[B690-B88F] envelope delle table
+    \item[B890-BDCF] parole degli strumenti speech (\$20*42)
+    \item[BDD0-BE77] nomi delle parole degli strumenti speech
+    \item[BE78-BE79] flag di memoria inizializzata (impostato a "rb" nell'init)
+    \item[BE7A-BFB9] nomi degli instrument
 \end{description}
 
-\subsection{Bank 1}
+\subsection{Banco 1}
 
 \begin{description}
-    \item[A000-A01F] empty
-    \item[A020-A03F] table allocation table
-    \item[A040-A07F] instr alloc table
-    \item[A080-A87F] chain phrases
-    \item[A880-B07F] chain transposes
-    \item[B080-B47F] instrument parameters \label{sram-instr-param}
-    \item[B480-B67F] table transposes
-    \item[B680-B87F] table commands, left column
-    \item[B880-BA7F] table command values, left column
-    \item[BA80-BC7F] table commands, right column
-    \item[BC80-BE7F] table command values, right column
-    \item[BE80-BE81] mem initialized flag (set to "rb" on init)
-    \item[BE82-BEA1] phrase allocation table
-    \item[BEA2-BEB1] chain allocation table
-    \item[BEB2-BFB1] softsynth params
-    \item[BFB2-BFB2] clock, hours
-    \item[BFB3-BFB3] clock, minutes
+    \item[A000-A01F] vuoto
+    \item[A020-A03F] tabella di allocazione delle table
+    \item[A040-A07F] tabella di allocazione degli strumenti
+    \item[A080-A87F] phrase delle chain
+    \item[A880-B07F] transpose delle chain
+    \item[B080-B47F] parametri degli strumenti \label{sram-instr-param}
+    \item[B480-B67F] transpose delle table
+    \item[B680-B87F] comandi delle table, colonna di sinistra
+    \item[B880-BA7F] valori dei comandi delle table, colonna di sinistra
+    \item[BA80-BC7F] comandi delle table, colonna di destra
+    \item[BC80-BE7F] valori dei comandi delle table, colonna di sinistra
+    \item[BE80-BE81] flag di memoria inizializzata (impostato a "rb" nell'init)
+    \item[BE82-BEA1] tabella di allocazione delle phrase
+    \item[BEA2-BEB1] tabella di allocazione delle chain
+    \item[BEB2-BFB1] parametri dei softsynth
+    \item[BFB2-BFB2] orologio, ore
+    \item[BFB3-BFB3] orologio, minuti
     \item[BFB4-BFB4] tempo
     \item[BFB5-BFB5] tune setting
-    \item[BFB6-BFB6] total clock, days
-    \item[BFB7-BFB7] total clock, hours
-    \item[BFB8-BFB8] total clock, minutes
-    \item[BFB9-BFB9] total clock
-    \item[BFBA-BFBA] key delay
-    \item[BFBB-BFBB] key repeat
-    \item[BFBC-BFBC] font (for cgb)
+    \item[BFB6-BFB6] orologio totale, giorni
+    \item[BFB7-BFB7] orologio totale, ore
+    \item[BFB8-BFB8] orologio totale, minuti
+    \item[BFB9-BFB9] orologio totale
+    \item[BFBA-BFBA] ritardo dei tasti (key delay)
+    \item[BFBB-BFBB] ripetizione dei tasti (key repeat)
+    \item[BFBC-BFBC] font (per cgb)
     \item[BFBD-BFBD] sync mode (off/lsdj/midi/...)
-    \item[BFBE-BFBE] colorset
-    \item[BFBF-BFBF] sync parameter (e.g. analog in ticks/step)
-    \item[BFC0-BFC0] clone (0=deep, 1=slim)
-    \item[BFC1-BFC1] file changed?
+    \item[BFBE-BFBE] colori
+    \item[BFBF-BFBF] parametro sync (es.: analogico in tick/step)
+    \item[BFC0-BFC0] modalità di clone (0=deep, 1=slim)
+    \item[BFC1-BFC1] il file è stato modificato?
     \item[BFC2-BFC2] power save
-    \item[BFC3-BFC3] prelisten
-    \item[BFC4-BFC5] synths locked?
-    \item[BFC6-BFC9] last used instrument/channel
+    \item[BFC3-BFC3] preascolto
+    \item[BFC4-BFC5] i synth sono bloccati in modifica?
+    \item[BFC6-BFC9] ultimo instrument/channel utilizzato
 \end{description}
 
-\subsection{Bank 2}
+\subsection{Banco 2}
 
 \begin{description}
-    \item[A000-AFEF] phrase commands
-    \item[AFF0-BFDF] phrase command values
+    \item[A000-AFEF] comandi delle phrase
+    \item[AFF0-BFDF] valori dei comandi delle phrase
 \end{description}
 
-\subsection{Bank 3}
+\subsection{Banco 3}
 
 \begin{description}
-    \item[A000-AFFF] waves
-    \item[B000-BFEF] phrase instruments
-    \item[BFF0-BFF1] mem initialized flag (set to "rb" on init)
-    \item[BFF2-BFFE] empty
-    \item[BFFF-BFFF] version byte
+    \item[A000-AFFF] waves (forme d'onda)
+    \item[B000-BFEF] strumenti delle phrase
+    \item[BFF0-BFF1] flag di memoria inizializzata (impostato a "rb" nell'init)
+    \item[BFF2-BFFE] vuoto
+    \item[BFFF-BFFF] byte di versione
 \end{description}
 
-\section{Instrument Layouts}
+\section{Rappresentazione in memoria degli strumenti}
 
-Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the different instrument types. Each instrument takes up 16 bytes of the instrument parameter area in \nameref{sram-instr-param}.
+Le tabelle da \ref{tab:sram-pulse} a \ref{tab:sram-noise} mostrano la disposizione nella SRAM dei diversi tipi di strumento. Ogni strumento occupa fino a 16 byte dell'area per i parametri degli strumenti in \nameref{sram-instr-param}.
 
 \begin{table}
 	\begin{center}
-	\caption{Pulse Instrument SRAM Layout.}
+	\caption{Disposizione in SRAM degli strumenti Pulse.}
 	\label{tab:sram-pulse}
 	\begin{tabular}{r|r|l|l}
 		\toprule
-    Byte & Bits & Content & Value \\
+    Byte & Bit & Contenuto & Valore \\
     \midrule
     0  & 7-0 & 0 & \\
     1  & 7-0 & \textsc{Adsr 1} 		& \\
     2  & 7-0 & \textsc{Pu2 Tsp.} 	& \\
-    3  & 6   & \textsc{Length=Unlim} 	& 0=yes, 1=no \\
+    3  & 6   & \textsc{Length=Unlim} 	& 0=sì, 1=no \\
        & 5-0 & \textsc{Length} 		& \\
     4  & 6-0 & \textsc{Sweep} 		& \\
-    5  & 7   & \textsc{Pitch=Step} 	& 0=no, 1=yes \\
-       & 6   & \textsc{Pitch=Drum} 	& 0=no, 1=yes \\
+    5  & 7   & \textsc{Pitch=Step} 	& 0=no, 1=sì \\
+       & 6   & \textsc{Pitch=Drum} 	& 0=no, 1=sì \\
        & 5   & \textsc{Transpose} 	& 0=on, 1=off \\
        & 4   & \textsc{Pitch} speed	& 0=fast, 1=tick \\
        & 3   & \textsc{Table} speed	& 0=tick, 1=step \\
@@ -116,10 +116,10 @@ Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the 
 
 \begin{table}
 	\begin{center}
-		\caption{Wave Instrument SRAM Layout.}
+		\caption{Disposizione in SRAM degli strumenti Wave.}
 		\begin{tabular}{r|r|l|l}
 			\toprule
-    Byte & Bits & Content & Value \\
+    Byte & Bit & Contenuto & Valore \\
     \midrule
     0  & 7-0 & 1 & \\
     1  & 6-5 & \textsc{Volume} 		& \\
@@ -127,8 +127,8 @@ Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the 
     3  & 7-0 & \textsc{Wave} 		& \\
        & 7-4 & \textsc{Synth} 		& \\
     4  & -   & - & \\
-    5  & 7   & \textsc{Pitch=Step} 	& 0=no, 1=yes \\
-       & 6   & \textsc{Pitch=Drum} 	& 0=no, 1=yes \\
+    5  & 7   & \textsc{Pitch=Step} 	& 0=no, 1=sì \\
+       & 6   & \textsc{Pitch=Drum} 	& 0=no, 1=sì \\
        & 5   & \textsc{Transpose} 	& 0=on, 1=off \\
        & 4   & \textsc{Pitch} speed	& 0=fast, 1=tick \\
        & 3   & \textsc{Table} speed	& 0=tick, 1=step \\
@@ -149,19 +149,19 @@ Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the 
 
 \begin{table}
 	\begin{center}
-		\caption{Kit Instrument SRAM Layout.}
+		\caption{Disposizione in SRAM degli strumenti Kit.}
 		\begin{tabular}{r|r|l|l}
 			\toprule
-   Byte & Bits	& Content 		& Value \\
+   Byte & Bit	  & Contenuto 		& Valore \\
    \midrule
       0	& 7-0 	& 2 			& \\
       1	& 6-5 	& \textsc{Volume} 	& \\
-      2	& 7   	& \textsc{Loop 1=Atk} 	& 0=no, 1=yes \\
-	& 6   	& \textsc{Speed=0.5x} 	& 0=no, 1=yes \\
+      2	& 7   	& \textsc{Loop 1=Atk} 	& 0=no, 1=sì \\
+	& 6   	& \textsc{Speed=0.5x} 	& 0=no, 1=sì \\
 	& 5-0 	& \textsc{Kit} 		& \\
       3	& 7-0 	& \textsc{Length 1} 	& 0=\textsc{Auto} \\
       4	& -   	& - 			& \\
-      5	& 7   	& \textsc{Pitch=Step} 	& 0=no, 1=yes \\
+      5	& 7   	& \textsc{Pitch=Step} 	& 0=no, 1=sì \\
 	& 6   	& \textsc{Loop 1} 	& 0=off, 1=on \\
 	& 5   	& \textsc{Loop 2} 	& 0=off, 1=on \\
 	& 4   	& \textsc{Pitch} speed	& 0=fast, 1=tick \\
@@ -172,7 +172,7 @@ Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the 
 	& 4-0 	& Table			& \\
       7	& 1-0 	& \textsc{Output}	& \\
       8	& 7-0 	& \textsc{Finetune}	& \\
-      9	& 7   	& \textsc{Loop 2=Atk} 	& 0=no, 1=yes \\
+      9	& 7   	& \textsc{Loop 2=Atk} 	& 0=no, 1=sì \\
 	& 5-0 	& \textsc{Kit} 		& \\
      10	& 7-0 	& \textsc{Dist} 	& \$d0-\$d3=\textsc{clip, shape, shap2, wrap} \\
      11	& 7-0 	& \textsc{Length 2} 	& 0=\textsc{Auto} \\
@@ -185,16 +185,16 @@ Tables \ref{tab:sram-pulse} to \ref{tab:sram-noise} show the SRAM layout of the 
 
 \begin{table}
 	\begin{center}
-		\caption{Noise Instrument SRAM Layout.}
+		\caption{Disposizione in SRAM degli strumenti Noise.}
 		\label{tab:sram-noise}
 		\begin{tabular}{r|r|l|l}
 			\toprule
-   Byte	& Bits	& Content 		& Value \\
+   Byte	& Bit	& Contenuto 		& Valore \\
 \midrule
       0	& 7-0 	& 3 			& \\
       1 & 7-0 	& \textsc{Adsr 1} 	& \\
       2 & -   	& -  		 	& \\
-      3 & 6   	& \textsc{Length=Unlim}	& 0=yes, 1=no \\
+      3 & 6   	& \textsc{Length=Unlim}	& 0=sì, 1=no \\
         & 5-0 	& \textsc{Length} 	& \\
       4 & 7-0 	& Last entered note 	& \\
       5 & 3     & \textsc{Table} speed	& 0=tick, 1=step \\
