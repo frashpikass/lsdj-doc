@@ -2,66 +2,54 @@
 \section{Ciao!}
 Prima di tutto, grazie di aver deciso di provare Little Sound Dj!
 
-A lot of effort has been put into making this program as powerful and fast-worked
-as possible. If you don't have previous experience from similar ``tracker"-like
-music editors, the amount of new concepts may seem a bit overwhelming at first.
-Please, try not to stress about it. Learn step by step, keep it fun and progress
-at your own pace. Within days, you should know enough about the
-program to make your own first songs.
+Un sacco di sforzi sono stati fatti per rendere questo programma il più veloce e potente possibile.
+Se non avete esperienza con l’interfaccia degli editor musicali denominati “tracker”, la mole di nuovi concetti da imparare potrebbe sembrarvi un po’ opprimente al primo impatto. Posso solo consigliarvi di non stressarvi troppo. Cercate di imparare passo dopo passo, di divertirvi e di progredire secondo i vostri ritmi. 
+Nel giro di pochi giorni, dovreste già conoscere il programma abbastanza da poter comporre i vostri primi pezzi. 
 
-This manual is mostly written as an absolute beginners guide, but also as a reference
-that covers everything in the program. However, there still
-is a lot of information that would not fit into a manual like this. I highly recommend
-checking out the user-maintained Wiki site at \url{http://wiki.littlesounddj.com} -
-it contains material like tutorials, tips and tricks, and
-hardware related DIY projects. Also, the Facebook group
-at \url{https://www.facebook.com/groups/LittleSoundDJ/} is useful for getting in touch
-with other users.
-If you have questions, ideas or bug reports, please e-mail
-\href{mailto:info@littlesounddj.com}{info@littlesounddj.com}.
+Questo manuale è stato principalmente scritto come una guida per chi parte da zero, ma vuol essere anche un completo manuale di riferimento. Tuttavia, ci sono molte informazioni che non riuscirebbero a stare in un manuale come questo. Vi consiglio caldamente di guardare il Wiki gestito dagli utenti al link \url{http://wiki.littlesounddj.com} - contiene materiali come tutorial, consigli, trucchi e progetti DIY. Inoltre, anche il gruppo Facebook \url{https://www.facebook.com/groups/LittleSoundDJ/} può essere utile per mantenersi in contatto con altri utilizzatori di LSDJ.
+Se avete domande, idee o bug da segnalare, potete inviarmi una mail a \href{mailto:info@littlesounddj.com}{info@littlesounddj.com}.
 
-Happy tracking!
+Felice tracking!
 
 \textit{/Johan}
 
-\section{Important Notice}
+\section{Avviso Importante}
 
-Turning off the Game Boy while playing may cause your songs to be lost, so please avoid that.
-Also, it is best to avoid using the program when batteries are low enough to risk that the
-Game Boy shuts down itself. Low battery level is indicated by the red light on your Game Boy
-becoming faint, or the screen becoming dim.
+Spegnere il Game Boy mentre state suonando può farvi perdere la vostra canzone, quindi vi consiglio di evitarlo.
+Inoltre, è meglio non usare il programma quando le batterie sono quasi scariche, per evitare che il Game Boy si spenga da solo.
+Un basso livello delle batterie è indicato dall'affievolirsi della luce rossa sul vostro Game Boy, o dall'affievolirsi della luminosità dello schermo.
 
-\section{Game Boy Sound}
-The Game Boy sound chip has four channels, each with 4-bit resolution.
+\section{Il suono del Game Boy}
+Il chip sonoro del Game Boy ha quattro canali, ognuno dei quali ha una risoluzione di 4-bit:
 
 \begin{description}
-\item[Pulse Channel 1] Square wave with envelope and sweep functions.
-\item[Pulse Channel 2] Square wave with envelope function.
-\item[Wave Channel] Soft synthesizer, sample playback and speech synthesis.
-\item[Noise Channel] Noise with envelope and shape functions.
+\item[Pulse Channel 1] Onda quadra con funzioni di inviluppo (envelope) e sweep (DA CHIARIRE)..
+\item[Pulse Channel 2] Onda quadra con funzioni di inviuppo.
+\item[Wave Channel] Sintetizzatore software, playback di campioni e sintesi vocale.
+\item[Noise Channel] Rumore (noise) con funzioni di inviluppo e forma (shape).
 \end{description}
 
 
-\section{Key Presses}
-In this documentation, key presses are marked up in this fashion:
+\section{Pulsanti}
+In questo manuale, la pressione su di un tasto è segnalata in questo modo:
 \begin{description}
-\item[\textsc{a}] \textsc{a} button
-\item[\textsc{b}] \textsc{b} button
-\item[\textsc{start}] start button
-\item[\textsc{select}] select button
-\item[\textsc{cursor}] any direction of the plus-shaped D-pad
-\item[\textsc{left}] D-pad left
-\item[\textsc{right}] D-pad right
-\item[\textsc{up}] D-pad up
-\item[\textsc{down}] D-pad down
-\item[\textsc{left/right}] D-pad left or right
-\item[\textsc{up/down}] D-pad up or down
-\item[\textsc{select+a}] pressing \textsc{a} while holding \textsc{select}
-\item[\textsc{select+(b,b)}] pressing \textsc{b} twice, while holding \textsc{select}
+\item[\textsc{a}] tasto \textsc{a} 
+\item[\textsc{b}] tasto \textsc{b} 
+\item[\textsc{start}] tasto start
+\item[\textsc{select}] tasto select
+\item[\textsc{cursor}] premere una qualsiasi direzione sulla croce direzionale (frecce) 
+\item[\textsc{left}] freccia direzionale sinistra
+\item[\textsc{right}] freccia direzionale destra
+\item[\textsc{up}] freccia direzionale in alto
+\item[\textsc{down}] freccia direzionale in basso
+\item[\textsc{left/right}] freccia direzionale sinistra o destra
+\item[\textsc{up/down}] freccia direzionale in alto o in basso
+\item[\textsc{select+a}] premere \textsc{a} tenendo premuto \textsc{select}
+\item[\textsc{select+(b,b)}] premere \textsc{b} due volte, tenendo premuto \textsc{select}
 \end{description}
 
-\section{Navigating the Program}
-When starting LSDj, you will see the screen in figure~\ref{fig:song}.
+\section{Navigare Nel Programma}
+Dopo aver avviato LSDj, vedrai una schermata come quella in Figura~\ref{fig:song}.
 
 \begin{figure}[hbtp]
 \centering
@@ -70,11 +58,9 @@ When starting LSDj, you will see the screen in figure~\ref{fig:song}.
 \label{fig:song}
 \end{figure}
 
-The \textsc{song} title in the top left tells that this is the song screen,
-the place to arrange songs. The four columns with dashes each represent a
-Game Boy sound channel. There are two pulse wave channels, one custom wave channel
-(which uses sampled drum kits or soft-synthesized wave forms), and one noise channel. You
-can move between the channels using the D-pad.
+Il titolo \textsc{song} in alto a sinistra, indica che siete nel Song Screen (Schermo Canzone), ovvero la finestra dove organizzare i vostri pezzi. Ognuna delle quattro colonne coi trattini rappresenta un diverso canale del chip sonoro del Game Boy. Ci sono due canali pulse wave (onde quadre - PU1 e PU2), un canale per le forme d’onda create dall’utente (che utilizza kit di suoni precampionati, o forme d’onde gestite da un sintetizzatore software), e un canale per il noise.
+Puoi spostarti da un canale all’altro utilizzando la croce direzionale.
+
 
 \begin{figure}[hbtp]
 \centering
@@ -83,20 +69,17 @@ can move between the channels using the D-pad.
 \label{fig:map}
 \end{figure}
 
-Little Sound Dj has nine screens, arranged in a map shown in the
-bottom right of the screen (figure~\ref{fig:map}). You can navigate between the screens by
-holding \textsc{select} and pressing the D-pad.
+Little Sound Dj usa nove schermate differenti, organizzate nella mappa visibile sullo schermo in basso a destra (figure~\ref{fig:map}).  Potete navigare fra i diversi schermi premendo contemporaneamente \textsc{select} e la croce direzionale. 
 
-The most useful screens are placed in the middle row, ordered by level of detail. 
-The song, chain and phrase screens are used for sequencing, and work together in a tree-structure
-fashion.  The song contains chains, each chain contains phrases, and each phrase contains notes.
-They are followed by the instrument and table screens, which are used to create sounds.
+Le schermate più utili sono posizionate nella riga centrale della mappa, ordinate gerarchicamente per livello di dettaglio.
+Gli schermi song (canzone), chain (catena) e phrase (frase) sono utilizzati per il sequencing e funzionano secondo una struttura ad albero. Ogni canzone (song) è formata da più catene (chain), ogni chain contiene più frasi (phrase), e ogni frase contiene delle note. A seguire, abbiamo la schermata Instrument (strumento) e la schermata Table (tabella), che servono a creare i suoni.
 
-\section{Making Your First Sounds}
-Navigate to the song screen, and move the cursor to the \textsc{pu1} column. Tap the \textsc{a} button,
-and a new chain ``00'' will appear.
-Edit the chain by pressing \textsc{select+right} to enter the chain screen.
-There, tap \textsc{a} to insert a new phrase, then press \textsc{select+right} to go to the phrase screen.
+\section{Costruire I Vostri Primi Suoni}
+
+
+Navigate fino allo schermo song e muovete il cursore sulla colonna \textsc{pu1}. Ora premete il bottone \textsc{a} una volta, per creare una nuova Chain “00”.
+Potete ora modificare la chain premendo \textsc{select+right} per andare sulla schermata chain.
+A questo punto, premete \textsc{a} per inserire una nuova phrase, poi premete \textsc{select+right} per andare sulla schermata phrase.
 
 \begin{figure}[hbtp]
 \centering
@@ -105,18 +88,11 @@ There, tap \textsc{a} to insert a new phrase, then press \textsc{select+right} t
 \label{fig:phrase1}
 \end{figure}
 
-In the phrase screen, you can enter notes to be played back. Move the cursor to the note
-column and press \textsc{a} to enter a note. The text C-2 will appear: C being the note, and 2 the
-octave. Press \textsc{start} to play the phrase. Notice how the phrase is played back from
-top to bottom. You can change the note by holding \textsc{a} and pressing the
-D-pad. \textsc{a+left/right} changes the note, and \textsc{a+up/down} changes octave.
+Nella schermata Phrase, potete inserire le note da riprodurre. Spostate il cursore sulla colonna note e premete \textsc{a} per inserire una nota. Apparirà il testo C-2: C è la nota, mentre 2 è l’ottava. Premete \textsc{start} per riprodurre la frase. Come potete vedere, le note vengono eseguite dall'alto verso il basso. Potete cambiare la nota tenendo premuto \textsc{a} e muovendo la croce direzionale. \textsc{a+left/right} + cambia la nota, mentre \textsc{a+up/down} cambia l’ottava.
 
-Now, try to move the cursor and insert notes on other steps.
-To delete a note, press \textsc{a} while holding \textsc{b}.
-When you have finished listening, press \textsc{start} again to stop the phrase.
+Adesso, provate a muovere il cursore e a inserire note sugli altri step. Per cancellare una nota, premete \textsc{a} mentre state schiacciando \textsc{b}. Quando avete finito di ascoltare il vostro lavoro, premete nuovamente \textsc{start} per fermare la phrase. 
 
-The clean pulse sound might get dull after while. Let's move on to the instrument
-screen by pressing \textsc{select+right}.
+Il semplice suono del canale pulse può suonare monotono dopo un po'. Per questa ragione, spostatiamoci sulla schermata instrument premendo \textsc{select+right}.
 
 \begin{figure}[hbtp]
 \centering
@@ -125,46 +101,37 @@ screen by pressing \textsc{select+right}.
 \label{fig:instr}
 \end{figure}
 
-In the instrument screen, we can make the sound a little bit more interesting.
-Try changing the \textsc{adsr} and \textsc{wave} fields by moving the cursor there and pressing \textsc{a+left/right}.
-As an example, setting the \textsc{adsr} setting to \texttt{A3} should make the sound more bouncy.
-Press \textsc{start} again to hear the changes as you make them!
+Nella schermata instrument, possiamo rendere il suono un po' più interessante. Provate a modificare i campi \textsc{adsr} e \textsc{wave}, selezionandoli col cursore e premendo \textsc{a+left/right}. Ad esempio, impostare il nostro ADSR su \texttt{A3} dovrebbe  rendere il nostro suono un po' più rimbalzante. Premete nuovamente \textsc{start}, per ascoltare le modifiche che state apportando.
 
-The \textsc{type} field sets the instrument type. Instrument types are specific for
-channels -- \textsc{pulse} instruments should only be played back in the pulse channels, \textsc{wave} and \textsc{kit}
-instruments in the wave channel, and \textsc{noise} instruments in the noise channel.
+Il campo \textsc{type} definisce il tipo di strumento. Ogni canale prevede l'uso di un particolare tipo di strumento -- Gli strumenti \textsc{pulse} dovrebbero essere utilizzati solo sui canali pulse, gli strumenti \textsc{wave} e \textsc{kit} sul canale wave e gli strumenti \textsc{noise} sul canale noise.
 
-Let's try out the sampled drum kits. Now, we have to change channel to the wave channel.
-Go back to the song screen, move the cursor over to the wave channel, and create a new
-chain and a new phrase by tapping \textsc{a}.
-Enter a note by tapping \textsc{a}, then \textsc{select+right} to edit the instrument.
-Change the instrument type to \textsc{kit} by pressing \textsc{a+right} on the type field,
-then go back to the phrase screen. Now, you should be able to enter drum sounds the same way
-you entered notes before.
+Proviamo adesso i kit di campioni. Per prima cosa, dobbiamo spostarci sul canale wave. Andiamo indietro alla schermata song, muoviamo il cursore sul canale wave e creiamo una nuova chain e una nuova phrase premendo \textsc{a}. Inserite una nota premendo \textsc{a}, poi usate \textsc{select+right} per andare sull'editor dell'instrument. Premendo \textsc{a+right} sulla sezione field, andiate a selezionare \textsc{kit} come tipo di strumento, poi tornate alla schermata phrase. Adesso, dovreste essere in grado di inserire i suoni di batteria nello stesso modo in cui avete già inserito le note.
 
-To create new chains and phrases, move the cursor to an empty step in song or chain screen and tap \textsc{a} twice.
+Per creare nuove chain e nuove phrases, selezionate uno step vuoto nella schermata song o nella schermata chain. Poi, premete \textsc{a} due volte.
 
-\section{Initial Troubleshooting}
+\section{Risoluzione Dei Problemi Iniziale}
 
-Does your cartridge not start, crash, or act strange in other ways? Here are some things to try.
+La vostra cartuccia non parte, va in crash, o si comporta in modo strano? Ecco alcune soluzioni che puoi provare.
 
 \begin{itemize}
-\item Clean cartridge pins using a cotton swab and alcohol.
-\item Re-insert the cartridge a couple of times to remove oxide.
-\item Make sure that the cartridge is firmly plugged in. Sometimes it can help to put a piece of tape on the cartridge to give it a snug fit.
-\item Replace batteries with fresh ones.
-\item Do a full reset of the cartridge memory. This is done by pressing \textsc{select+a+b} on the \textsc{load/save file} button in project screen.
-\item Certain Game Boy Advance/Nintendo DS cartridges do not work with Little Sound Dj. If you have problems with such a cartridge, try one of the Little Sound Dj builds named ``Goomba''.
-\item Search for help on the Little Sound Dj Wiki (\url{http://wiki.littlesounddj.com}) or ask in the Facebook group.
+\item Pulite i pin della cartuccia usando un batuffolo di cotone e dell'alcol.
+\item Re-inserite la cartuccia un paio di volte, per rimuovere eventuale ossido.
+\item Assicuratevi che la cartuccia sia saldamente inserita. A volte può essere utile mettere un pezzo di nastro sulla cartuccia, per inspessirla e darle una forma più aderente.
+\item Cambiate le batterie, inserendo delle batterie nuove.
+\item Eseguite un reset completo della memoria della cartuccia, premendo \textsc{select+a+b} sul pulsante \textsc{load/save file} nella schermata progetto.
+\item Alcune cartucce per Game Boy Advance/Nintendo DS non funzionano con Little Sound Dj. Se avete problemi con cartucce di questo tipo, provate una delle build di Little Sound Dj nominate ``Goomba''.
+\item Chiedete aiuto sulla Wiki di Little Sound Dj (\url{http://wiki.littlesounddj.com}) o sul gruppo Facebook.
 \end{itemize}
 
-\section{Hexadecimal Number System}
+\section{Il Sistema Numerico Esadecimale}
 
-Before moving on to the next chapter, now is a good time to get introduced with the hexadecimal number system that Little Sound Dj uses for representing values.
+Prima di passare al capitolo successivo, è giunto il momento di introdurre il sistema numerico esadecimale, che Little Sound Dj usa per rappresentare i valori numerici. 
 
-The hexadecimal number system works just the same way as the traditional decimal number system. The only difference is that it's base is 16 instead of 10. This means it consists of 16 unique symbols: the digits 0 to 9, followed by the letters A to F. For clarity, this manual will mark hexadecimal values with a dollar sign.
-As an example, let's print a table of numbers -- first with decimal digits, then with
-hexadecimal digits\ldots
+Il sistema numerico esadecimale funziona esattamente come il sistema decimale
+tradizionale. L'unica differenza è che invece di essere in base 10 è in base 16. Ciò significa
+che è formato da 16 simboli unici: le cifre da 0 a 9, seguite dalle lettere dalla A alla F. Per
+maggiore chiarezza, questo manuale indicherà i valori esadecimali con il simbolo del dollaro: \$. Come
+esempio, riportiamo una tabella di numeri, scritti sia con cifre decimali che esadecimali\ldots
 
 \begin{figure}[hbtp]
 \centering
@@ -183,13 +150,10 @@ hexadecimal digits\ldots
 
 \end{figure}
 
-Note that the hexadecimal and decimal values are really equal; just the representations differ.
-The reason to use the hexadecimal system here is to save screen space; with hexadecimal
-numbers, it is possible to represent every byte value using no more than two digits. (The
-value range is 0 to 255 -- that is, \$0 to \$FF.)
+Potete osservare come i valori esadecimali siano veramente uguali a quelli decimali; cambia solo la loro rappresentazione. La ragione per cui viene utilizzato il sistema esadecimale è che permette di risparmiare spazio sullo schermo; con numeri esadecimali è possibile rappresentare ogni valore byte utilizzando non più di due cifre (L'intervallo di valori utilizzato
+da LSDj va da 0 a 255 – quindi da \$0 a \$FF). 
 
-Representing negative numbers with two digits only can be a problem. In Little Sound Dj,
-the numbers are wrapping. That means, when subtracting one from the smallest possible
-number (\$0), it will jump to the highest possible value (\$FF). So \$FF can represent -1 as well as 255, depending on the situation.
+Rappresentare i numeri negativi con solo due cifre può essere un problema. In Little Sound Dj, i numeri sono “circolari”. Questo significa che sottraendo 1 dal più piccolo
+numero possibile (\$0), il risultato diventerà il più alto valore possibile (\$FF). Di conseguenza, \$FF può voler dire sia -1 sia 255, a seconda della situazione. 
 
-If this does not make sense -- please don't worry too much -- it will become clear as you spend time with the program.
+Non preoccupatevi troppo, se non riuscite a capire immediatamente questa spiegazione. Diventerà tutto molto chiaro con l'utilizzo del programma. 
